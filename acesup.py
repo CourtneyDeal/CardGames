@@ -1,6 +1,5 @@
 """ This file contains algorithm code to play the solitaire game aces up, also known as idiots delight. """
 
-import numpy
 import random
 
 def initializecards():
