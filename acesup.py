@@ -61,13 +61,14 @@ def initializecards():
     return(cards)
 
 def deal(cards,tableau):
-
+    '''Deal one card to the top of each stack of the tableau.'''
     for i in range(4):
         tableau[i].insert(0,cards.pop(0))
     displayTableau(tableau)
     return([tableau,cards]) 
 
 def moveCard(position1, position2, tableau):
+    '''Move the specified card to the specified empty position.'''
     position1 = int(position1)-1
     position2 = int(position2)-1
     a = [1,2,3,4]
@@ -80,6 +81,7 @@ def moveCard(position1, position2, tableau):
     return(tableau)
 
 def removeCard(remove,tableau): 
+    '''Remove the specified card from the tableau'''
     remove = int(remove)-1
     validMove = False
     for i in range(4):
@@ -96,6 +98,7 @@ def removeCard(remove,tableau):
     return(tableau)
 
 def displayTableau(tableau):
+    '''Prints the top cards of each stack in the tableau.'''
     printcard = [[],[],[],[]] 
     for i in range(4):
         if tableau[i]:
@@ -105,6 +108,7 @@ def displayTableau(tableau):
     print('{} {} {} {}'.format(printcard[0],printcard[1],printcard[2],printcard[3]))
 
 def gamePlay():
+    '''Takes player inputs and performs the corresponding actions.'''
     win = True 
     contGame = True
     tableau = [[],[],[],[]] 
